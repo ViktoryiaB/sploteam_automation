@@ -5,8 +5,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
-import static java.lang.Thread.sleep;
-
 
 public class SploteamAutoTestLogin{
     public static final String url = "https://frontend.beta-spltm.ru";
@@ -29,12 +27,13 @@ public class SploteamAutoTestLogin{
     }
 
 
-
     @Test
-    public void clickOnLoginButton(){
-        driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-
+    public void openMainPageAndAssertPageLoaded() {
+        driver.findElement(By.className(HEADER_LOGO_CLASS));
     }
 
-    public static final String SIGNIN_BUTTON_CLASS = "header__signIn";
+
+    //Locators
+    public static final String HEADER_LOGO_CLASS = "header__logo";
+
 }
