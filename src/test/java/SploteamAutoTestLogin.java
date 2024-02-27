@@ -30,6 +30,7 @@ public class SploteamAutoTestLogin{
     @Test
     public void openMainPageAndAssertPageLoaded() {
         driver.findElement(By.className(HEADER_LOGO_CLASS));
+
     }
 
 
