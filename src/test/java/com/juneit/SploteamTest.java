@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class LoginTest {
+public class SploteamTest {
     private final PropertiesLoader properties = new PropertiesLoader ();
     private final WebDriver driver = new ChromeDriver ();
 
