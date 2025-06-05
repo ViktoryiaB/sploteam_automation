@@ -38,9 +38,9 @@ public class SploteamTest_Victoria_Diplom {
     //Test #1 Проверка статуса отображенных в Архиве игр, статус "Игра состоялась"
 
     public void ArchiveEventsGameStatusCheck () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount, ));
 
         WebElement archiveEvents = driver.findElement(By.xpath (ARCHIVE_EVENTS_PERSONAL_ACCOUNT_XPATH));
         archiveEvents.click();
@@ -61,9 +61,9 @@ public class SploteamTest_Victoria_Diplom {
     */
     public void NotificationsCheck () {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className(SIGNIN_BUTTON_CLASS)));
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         driver.findElement(By.xpath (NOTIFICATIONS_BELL_WIDGET_ICON_XPATH)).click();
 
@@ -104,9 +104,9 @@ public class SploteamTest_Victoria_Diplom {
 
     public void CreateAndLeaveOwnGameFutureDateSetFilters () throws InterruptedException {
 
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         driver.findElement(By.xpath(MY_GAMES_PERSONAL_ACCOUNT_XPATH)).click();
 
@@ -192,7 +192,7 @@ public class SploteamTest_Victoria_Diplom {
         //arrayStPDistrictsExpected.length
         String cityToCheck = "Санкт-Петербург";
 
-        login("testmyme4@gmail.com","Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         sleep(1000);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.className(AVATAR_NAME_CLASS))) в данном случае не срабатывает, поэтому sleep
@@ -249,7 +249,7 @@ public class SploteamTest_Victoria_Diplom {
 
         String cityToCheck = "Санкт-Петербург";
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className(SIGNIN_BUTTON_CLASS)));
-        login("testmyme4@gmail.com","Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         sleep(1000);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.className(AVATAR_NAME_CLASS)))

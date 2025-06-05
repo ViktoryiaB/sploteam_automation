@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a29114d-5fe2-42f2-acf2-64718af2e825" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom_old.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom_oldn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_HW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTestOld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juneit/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juneit/PropertiesLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +114,7 @@
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/JUNEITJAVATESTING/sploteam_automation/src/test/java/SploteamTest_Victoria.java",
+    "last_opened_file_path": "C:/JUNEITJAVATESTING - Copy/sploteam_automation",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -292,13 +283,6 @@
         <item itemvalue="JUnit.SploteamTest_Victoria_Diplom.ArchiveEventsGameStatusCheck" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

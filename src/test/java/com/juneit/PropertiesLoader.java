@@ -10,6 +10,8 @@ public class PropertiesLoader {
     public final String baseUrl = properties.getProperty ("base-url");
     public final String username = properties.getProperty ("username");
     public final String password = properties.getProperty ("password");
+    public final String gmailAccount = properties.getProperty ("gmail-account");
+    public final String gmailPassword = properties.getProperty ("gmail-password");
 
 
     private Properties getResource () {
