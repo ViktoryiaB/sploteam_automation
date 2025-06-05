@@ -40,7 +40,7 @@ public class SploteamTest_Victoria_Diplom {
     public void ArchiveEventsGameStatusCheck () {
         login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount, ));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         WebElement archiveEvents = driver.findElement(By.xpath (ARCHIVE_EVENTS_PERSONAL_ACCOUNT_XPATH));
         archiveEvents.click();

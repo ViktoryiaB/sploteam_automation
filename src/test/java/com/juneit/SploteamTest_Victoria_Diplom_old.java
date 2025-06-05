@@ -57,7 +57,7 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void loginPositive () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         assertEquals("BVA_",driver.findElement(By.className(AVATAR_NAME_CLASS)).getText());
 
@@ -67,9 +67,9 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void ArchiveEventsGameStatusCheck () { //Test #1
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         WebElement archiveEvents = driver.findElement(By.xpath (ARCHIVE_EVENTS_PERSONAL_ACCOUNT_XPATH));
         archiveEvents.click();
@@ -93,9 +93,9 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void ArchiveEventsSportsTypePastGamesCountFinder () { //Test #1  Узнать количество сыгранных игр по типу спорта, пример, Футбол
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailPassword));
 
         WebElement archiveEvents = driver.findElement(By.xpath (ARCHIVE_EVENTS_PERSONAL_ACCOUNT_XPATH));
         archiveEvents.click();
@@ -127,9 +127,9 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void NotificationsCheck () { //Test #2
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailPassword));
 
         driver.findElement(By.xpath (NOTIFICATIONS_BELL_WIDGET_ICON_XPATH)).click();
 
@@ -176,9 +176,9 @@ public class SploteamTest_Victoria_Diplom_old {
     public void CreateAndCancelOwnGameFutureDateSetFilters () { //Test #3 Создать и удалить игру в Личном кабинете на определенную дату (на 8-й день, считая от сегодня);
         // арена, вид спорта, уровень игрока - второй номер по порядку в списке выпадающего фильтра. Предварительное условие - наличие средств на личном счете минимум 5000 рублей.
 
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailPassword));
 
         driver.findElement(By.xpath(MY_GAMES_PERSONAL_ACCOUNT_XPATH)).click();
 
@@ -385,7 +385,7 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void EditNamePersonalAccount () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
 
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
@@ -413,7 +413,7 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void EditNameOneDigitPhoneNumberPersonalAccount () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         driver.findElement(By.className (CLEAR_NAME_PERSONAL_ACCOUNT_BUTTON_CLASS)).click();
@@ -429,7 +429,7 @@ public class SploteamTest_Victoria_Diplom_old {
 
     @Test
     public void EditEmptyNamePersonalAccount () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         driver.findElement(By.className (CLEAR_NAME_PERSONAL_ACCOUNT_BUTTON_CLASS)).click();

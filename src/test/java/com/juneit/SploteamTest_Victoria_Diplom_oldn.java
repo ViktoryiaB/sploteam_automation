@@ -38,9 +38,9 @@ public class SploteamTest_Victoria_Diplom_oldn {
     //Test #1 Проверка статуса отображенных в Архиве игр, статус "Игра состоялась"
 
     public void ArchiveEventsGameStatusCheck () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         WebElement archiveEvents = driver.findElement(By.xpath (ARCHIVE_EVENTS_PERSONAL_ACCOUNT_XPATH));
         archiveEvents.click();
@@ -65,9 +65,9 @@ public class SploteamTest_Victoria_Diplom_oldn {
               непрочитанных сообщений в Уведомлениях на странице Личного кабинета
     */
     public void NotificationsCheck () {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         driver.findElement(By.xpath (NOTIFICATIONS_BELL_WIDGET_ICON_XPATH)).click();
 
@@ -110,9 +110,9 @@ public class SploteamTest_Victoria_Diplom_oldn {
     public void CreateAndCancelOwnGameFutureDateSetFilters () { //Test #3 Создать и удалить игру в Личном кабинете на определенную дату (на 8-й день, считая от сегодня, предварительное условие - наличие свободных слотов для создания игры);
         // арена, вид спорта, уровень игрока - второй номер по порядку в списке выпадающего фильтра. Предварительное условие - наличие средств на личном счете минимум 5000 рублей.
 
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className (AVATAR_NAME_CLASS)).click();
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
 
         driver.findElement(By.xpath(MY_GAMES_PERSONAL_ACCOUNT_XPATH)).click();
 
@@ -218,7 +218,7 @@ public class SploteamTest_Victoria_Diplom_oldn {
         String[] arrayStPDistrictsExpected = {"Адмиралтейский", "Василеостровский", "Выборгский", "Калининский", "Кировский", "Колпинский", "Красногвардейский", "Красносельский", "Кронштадтский", "Курортный","Московский", "Невский", "Область", "Петроградский", "Петродворцовый", "Приморский","Пушкинский", "Фрунзенский", "Центральный"};
         String cityToCheck = "Санкт-Петербург";
 
-        login("testmyme4@gmail.com","Ilovetesting123!!");
+        login(properties.gmailAccount,properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         sleep(1000);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.className(AVATAR_NAME_CLASS)))
@@ -276,7 +276,7 @@ public class SploteamTest_Victoria_Diplom_oldn {
 
         String cityToCheck = "Санкт-Петербург";
 
-        login("testmyme4@gmail.com","Ilovetesting123!!");
+        login(properties.gmailAccount,properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         sleep(1000);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.className(AVATAR_NAME_CLASS)))

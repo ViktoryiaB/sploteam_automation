@@ -92,7 +92,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void loginPositive() {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         assertEquals("BVA_", driver.findElement(By.className(AVATAR_NAME_CLASS)).getText());
         logout();
@@ -100,7 +100,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void loginWithWrongEmail() {
-        login("a54ysjtdi76ryi@gmail.com", "Ilovetesting123!!");
+        login("a54ysjtdi76ryi@gmail.com", properties.gmailPassword);
 
         WebElement wrongEmailError = driver.findElement(By.className(WRONG_EMAIL_ERROR_CLASS));
 
@@ -121,7 +121,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void loginWithIncorrectFormatEmail() {
-        login("testmyme1@gmailcom", "Ilovetesting123!!");
+        login("testmyme1@gmailcom", properties.gmailPassword);
 
         WebElement wrongEmailError = driver.findElement(By.className(WRONG_EMAIL_ERROR_CLASS));
         assertTrue(wrongEmailError.isDisplayed());
@@ -152,10 +152,10 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void loginPersonalAccount() {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(USER_NAME));
-        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailPassword));
         assertEquals("Пополнить счет", driver.findElement(By.xpath(TOPUP_ACCOUNT_BUTTON_XPATH)).getText());
         assertTrue(driver.findElement(By.xpath(PERSONAL_ACCOUNT_XPATH)).getText().contains("Личный счёт"));
         assertEquals("Редактировать", driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).getText());
@@ -164,7 +164,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void EditNamePersonalAccount() {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         driver.findElement(By.className(CLEAR_FORMINPUT_PERSONAL_ACCOUNT_BUTTON_CLASS)).click();
@@ -191,7 +191,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void EditNameOneDigitPhoneNumberPersonalAccount() {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         driver.findElement(By.className(CLEAR_FORMINPUT_PERSONAL_ACCOUNT_BUTTON_CLASS)).click();
@@ -207,7 +207,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test //HW5
     public void EditDateOfBirthPersonalAccount() {  //HW5
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
 
@@ -235,7 +235,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test //HW5
     public void EditDateOfBirthNegativePersonalAccount() {   //HW5
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
 
@@ -269,7 +269,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void EditEmptyNamePersonalAccount() {
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         driver.findElement(By.className(CLEAR_FORMINPUT_PERSONAL_ACCOUNT_BUTTON_CLASS)).click();
@@ -393,7 +393,7 @@ public class SploteamTest_Victoria_HW {
     @Test
     public void assertSurveyCityNegative() throws InterruptedException {
         String city = "Санкт-Петербург";
-        login("testmyme4@gmail.com", "Ilovetesting123!!");
+        login(properties.gmailAccount, properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(PROFILE_HEADER_CLASS)).click();
         wait.until (ExpectedConditions.presenceOfElementLocated(By.xpath(SURVEY_OPTION_HEADER_VISIBILITY_XPATH)));
@@ -438,7 +438,7 @@ public class SploteamTest_Victoria_HW {
 
     @Test
     public void EditGenderPersonalAccount() {//TS получается что изменение пола просиходит только один раз а второй пол остается не проверенным? давай вместе перепишем на цикл
-        login("testmyme1@gmailcom", "Ilovetesting123!!");
+        login("testmyme1@gmailcom", properties.gmailPassword);
         driver.findElement(By.className(AVATAR_NAME_CLASS)).click();
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
         //replace steps to check both gender
