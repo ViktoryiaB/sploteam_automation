@@ -108,8 +108,8 @@ public class SploteamTest {
     @Test
     public void assertLoginPositive() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         WebElement nameHeaderElement = driver.findElement(By.className(NAME_HEADER_CLASS));
         Assert.assertTrue(nameHeaderElement.isDisplayed());
@@ -127,7 +127,7 @@ public class SploteamTest {
     public void assertLoginNegativeWrongEmail() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
         driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("stn@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).isDisplayed());
         Assert.assertTrue(driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).isDisplayed());
@@ -140,7 +140,7 @@ public class SploteamTest {
     @Test
     public void assertLoginNegativeWrongPassword() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
         driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Iiiiii123!!");
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).isDisplayed());
@@ -168,7 +168,7 @@ public class SploteamTest {
     @Test
     public void loginWithLessThanSixSymbolsPassword() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
         driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("123vv");
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         WebElement wrongPasswordError = driver.findElement(By.xpath(WRONG_PASSWORD_ERROR_MESSAGE_XPATH));
@@ -184,15 +184,15 @@ public class SploteamTest {
     @Test
     public void loginPersonalAccountLoadPositive() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         Assert.assertTrue(driver.findElement(By.className(NAME_HEADER_CLASS)).isDisplayed());
         Assert.assertEquals("BVA_", driver.findElement(By.className(NAME_HEADER_CLASS)).getText());
         driver.findElement(By.className(NAME_HEADER_CLASS)).click();
         Assert.assertEquals("BVA_", driver.findElement(By.xpath(PROFILECARD_NAME_XPATH)).getText());
-        Assert.assertEquals("testmyme4@gmail.com", driver.findElement(By.xpath(PROFILECARD_CONTACTS_EMAIL_XPATH)).getText());
+        Assert.assertEquals(properties.gmailAccount, driver.findElement(By.xpath(PROFILECARD_CONTACTS_EMAIL_XPATH)).getText());
         Assert.assertEquals("Пополнить счет", driver.findElement(By.xpath(TOPUP_ACCOUNT_BUTTON_XPATH)).getText());
         Assert.assertTrue(driver.findElement(By.xpath(PERSONAL_ACCOUNT_XPATH)).getText().contains("Личный счёт"));
         Assert.assertEquals("Редактировать", driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).getText());
@@ -204,8 +204,8 @@ public class SploteamTest {
     @Test
     public void EditNamePersonalAccountCheck() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         Assert.assertEquals("BVA_", driver.findElement(By.className(NAME_HEADER_CLASS)).getText());
@@ -237,8 +237,8 @@ public class SploteamTest {
     @Test
     public void EditEmptyNamePersonalAccountNegative() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         Assert.assertEquals("BVA_", driver.findElement(By.className(NAME_HEADER_CLASS)).getText());
@@ -259,8 +259,8 @@ public class SploteamTest {
     @Test //*not ready yet
     public void TopUpPersonalAccount() {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         Assert.assertEquals("BVA_", driver.findElement(By.className(NAME_HEADER_CLASS)).getText());
@@ -477,9 +477,9 @@ public class SploteamTest {
     @Test
     public void assertSurveyCityNegative() throws InterruptedException {
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        //login("testmyme4@gmail.com", "Ilovetesting123!!");
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        //login(properties.gmailAccount, properties.gmailPassword);
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         Assert.assertTrue(driver.findElement(By.className(AVATAR_HEADER_CLASS)).isDisplayed());
         driver.findElement(By.className (AVATAR_HEADER_CLASS)).click();
@@ -527,9 +527,9 @@ public class SploteamTest {
     public void EditGenderPersonalAccount () throws InterruptedException {
 
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        //login("testmyme4@gmail.com", "Ilovetesting123!!");
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        //login(properties.gmailAccount, properties.gmailPassword);
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         WebElement nameHeaderElement = driver.findElement(By.className(NAME_HEADER_CLASS));
         Assert.assertTrue(nameHeaderElement.isDisplayed());
@@ -537,7 +537,7 @@ public class SploteamTest {
 
         driver.findElement(By.className(NAME_HEADER_CLASS)).click();
         Assert.assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("BVA_"));
-        Assert.assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains("testmyme4@gmail.com"));
+        Assert.assertTrue(driver.findElement(By.xpath(PROFILE_CARD_XPATH)).getText().contains(properties.gmailAccount));
         driver.findElement(By.className(EDIT_ACCOUNT_BUTTON_CLASS)).click();
 
 
@@ -655,8 +655,8 @@ public class SploteamTest {
     public void assertRefundToPersonalAccountCheckbox() throws InterruptedException {
         sleep(3000);
         driver.findElement(By.className(SIGNIN_BUTTON_CLASS)).click();
-        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys("testmyme4@gmail.com");
-        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys("Ilovetesting123!!");
+        driver.findElement(By.xpath(EMAIL_INPUT_LOGIN_XPATH)).sendKeys(properties.gmailAccount);
+        driver.findElement(By.name(PASSWORD_INPUT_LOGIN_NAME)).sendKeys(properties.gmailPassword);
         driver.findElement(By.xpath(SUBMIT_LOGIN_BUTTON_XPATH)).click();
         WebElement nameHeaderElement = driver.findElement(By.className(NAME_HEADER_CLASS));
         nameHeaderElement.click();
