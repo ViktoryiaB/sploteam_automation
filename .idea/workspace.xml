@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a29114d-5fe2-42f2-acf2-64718af2e825" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juneit/PropertiesLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juneit/PropertiesLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/juneit/SploteamTest_Victoria_Diplom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="680e4fa7-c021-4ecb-aec8-b93d523005ee" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -119,7 +120,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
